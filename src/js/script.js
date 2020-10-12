@@ -47,4 +47,7 @@ $(document).ready(function () {
             $('.overlay, #order').fadeIn('slow');
         })
     })
+    $('#consultation-form form').validate();
+    $('#consultation form').validate();
+    $('#order form').validate();
 });
