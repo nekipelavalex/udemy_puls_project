@@ -80,4 +80,19 @@ $(document).ready(function () {
     validateForms('#order form');
 
     $('input[name=phone]').mask("+375 (99) 999-99-99");
+
+    $('form').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            type:"POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function(){
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIN('slow');
+            $("form").trigger("reset");
+        });
+        return false;
+    });
 });
