@@ -2,6 +2,13 @@
     .container{
         max-width: 860px;
     }
+    .catalog{
+        padding-bottom: 70px;
+        &-item{
+            width: 274px;
+            padding: 20px 18px 26px 18px;
+        }
+    }
 }
 @media (max-width: 991px){
     .container{
